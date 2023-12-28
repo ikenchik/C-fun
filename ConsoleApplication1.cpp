@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 
+using namespace std;
+
 class Dance {
 private:
     std::string branchName;
@@ -9,7 +11,7 @@ private:
     bool hasPromo;
 public:
     // конструктор
-    Dance(std::string d_branchName, std::string d_teacherName, int d_amount, int d_discount, bool d_hasPromo) {
+    Dance(string d_branchName, string d_teacherName, int d_amount, int d_discount, bool d_hasPromo) {
         branchName = d_branchName;
         teacherName = d_teacherName;
         amount = d_amount;
@@ -18,48 +20,48 @@ public:
     }
     // 1 функция
     void workingMode() {
-        std::cout << "Расписание:" << std::endl;
-        std::string workingHours[7]{ "Пн: 09.00 - 21.00", "Вт: 09.00 - 21.00", "Ср: 09.00 - 21.00", "Чт: 09.00 - 21.00",
+        cout << "Расписание:" << endl;
+        string workingHours[7]{ "Пн: 09.00 - 21.00", "Вт: 09.00 - 21.00", "Ср: 09.00 - 21.00", "Чт: 09.00 - 21.00",
         "Пт: 09.00 - 21.00", "Сб: 10.00 - 22.00" , "Вс: 10.00 - 19.00" };
         for (int i = 0; i < 7; i++)
         {
-            std::cout << workingHours[i] << std::endl;
+            cout << workingHours[i] << endl;
         }
     };
     // 2 функция
     void discoun() {
-        std::cout << "Сумма пополнения: " << amount << std::endl;
+        cout << "Сумма пополнения: " << amount << endl;
         if (hasPromo) {
-            std::cout << "Цена абонемента со скидкой: " << (3000 - (3000 / 100 * discount)) << std::endl;
+            cout << "Цена абонемента со скидкой: " << (3000 - (3000 / 100 * discount)) << endl;
         }
         else {
-            std::cout << "К сожалению, промокод отсутствует" << std::endl;
+            cout << "К сожалению, промокод отсутствует" << endl;
         }
     };
     // 3 функция
     void coach() {
-        std::cout << "К сожалению, выбор тренера не доступен, в данном филиале преподает только: " << teacherName << std::endl;
+        cout << "К сожалению, выбор тренера не доступен, в данном филиале преподает только: " << teacherName << endl;
     };
     //4 функция
     void br() {
-        std::cout << "Вы выбрали филиал: " << branchName << std::endl;
+        cout << "Вы выбрали филиал: " << branchName << endl;
     }
     // 5 функция
     void price() {
-        std::cout << "Стоимость месячного абонемента: 3000" << std::endl;
+        cout << "Стоимость месячного абонемента: 3000" << endl;
         if (hasPromo) {
             if (amount >= (3000 - (3000 / 100 * discount))) {
-                std::cout << "Абонемент успешно куплен!" << std::endl;
+                cout << "Абонемент успешно куплен!" << endl;
             }
             else {
-                std::cout << "На счете недостаточно средств для оплаты абонемента" << std::endl;
+                cout << "На счете недостаточно средств для оплаты абонемента" << endl;
             }
         }
         else if (amount < 3000) {
-            std::cout << "На счете недостаточно средств для оплаты абонемента" << std::endl;
+            cout << "На счете недостаточно средств для оплаты абонемента" << endl;
         }
         else {
-            std::cout << "Абонемент успешно куплен!" << std::endl;
+            cout << "Абонемент успешно куплен!" << endl;
         }
     };
 };
